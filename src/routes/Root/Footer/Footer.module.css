@@ -30,6 +30,7 @@
 .socialMediaIcons {
   width: 35px;
   height: 35px;
+  cursor: pointer;
 }
 
 .socialMediaLinks {
@@ -38,7 +39,6 @@
   align-items: center;
   gap: 10px;
   list-style: none;
-  cursor: pointer;
 }
 
 .organisationLinks {
@@ -48,11 +48,19 @@
   cursor: pointer;
 }
 
+.organisationLinks li:hover {
+  color: #2aa8ff;
+}
+
 .serviceLinks {
   font-size: 1rem;
   list-style: none;
   line-height: 2.25rem;
   cursor: pointer;
+}
+
+.serviceLinks li:hover {
+  color: #2aa8ff;
 }
 
 .copyright {

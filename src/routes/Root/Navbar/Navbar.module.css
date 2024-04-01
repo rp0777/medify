@@ -28,7 +28,8 @@
 }
 
 .navbarLinks li:active,
-.navbarLinks li:visited {
+.navbarLinks li:visited,
+.navbarLinks li:hover {
   color: #2aa8ff;
   font-weight: 600;
   border-bottom: 2.5px solid #2aa8ff;

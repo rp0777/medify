@@ -1,6 +1,7 @@
 import styles from "./Root.module.css";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
+import AppDownload from "./AppDownload/AppDownload";
 
 const Root = () => {
   return (
@@ -14,6 +15,9 @@ const Root = () => {
 
       {/* NAVBAR COMPONENT */}
       <Navbar />
+
+      {/* MOBILE APP DOWNLOAD COMPONENT */}
+      <AppDownload />
 
       {/* FOOTER COMPONENT */}
       <Footer />
