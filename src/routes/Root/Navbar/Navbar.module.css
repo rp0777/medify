@@ -1,0 +1,51 @@
+.navbar {
+  width: 80%;
+  height: 96px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.logoImg {
+  width: 24px;
+  height: 24px;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #2aa8ff;
+}
+
+.logoTitle {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--poppins-font-family);
+  color: #2aa8ff;
+}
+
+.navbarLinks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 14px;
+  font-family: var(--poppins-font-family);
+  color: #102851;
+}
+
+#myBookings {
+  width: 130px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: #2aa8ff;
+}
