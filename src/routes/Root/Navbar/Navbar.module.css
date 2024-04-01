@@ -6,29 +6,8 @@
   align-items: center;
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-}
-
-.logoImg {
-  width: 24px;
-  height: 24px;
-  padding: 6px;
-  border-radius: 5px;
-  background-color: #2aa8ff;
-}
-
-.logoTitle {
-  font-size: 18px;
-  font-weight: 700;
-  font-family: var(--poppins-font-family);
-  color: #2aa8ff;
-}
-
 .navbarLinks {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,6 +16,22 @@
   font-size: 14px;
   font-family: var(--poppins-font-family);
   color: #102851;
+}
+
+.navbarLinks li {
+  width: 105px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbarLinks li:active,
+.navbarLinks li:visited {
+  color: #2aa8ff;
+  font-weight: 600;
+  border-bottom: 2.5px solid #2aa8ff;
 }
 
 #myBookings {
@@ -48,4 +43,5 @@
   justify-content: center;
   color: #ffffff;
   background-color: #2aa8ff;
+  cursor: pointer;
 }

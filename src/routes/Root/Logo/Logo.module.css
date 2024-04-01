@@ -1,0 +1,22 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.logoImg {
+  width: 24px;
+  height: 24px;
+  padding: 6px;
+  border-radius: 5px;
+  background-color: #2aa8ff;
+}
+
+.logoTitle {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: var(--poppins-font-family);
+  color: #2aa8ff;
+}

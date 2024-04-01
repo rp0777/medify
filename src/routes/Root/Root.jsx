@@ -1,5 +1,6 @@
 import styles from "./Root.module.css";
 import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 
 const Root = () => {
   return (
@@ -13,6 +14,9 @@ const Root = () => {
 
       {/* NAVBAR COMPONENT */}
       <Navbar />
+
+      {/* FOOTER COMPONENT */}
+      <Footer />
     </div>
   );
 };
