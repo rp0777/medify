@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 import Intro from "./Intro/Intro";
 import OfferCards from "./OfferCards/OfferCards";
 import SearchBox from "./SearchBox/SearchBox";
+import Services from "./Services/Services";
 import Specialists from "./Specialists/Specialists";
 import Specializations from "./Specializations/Specializations";
 import Stats from "./Stats/Stats";
@@ -20,6 +21,8 @@ const Home = () => {
       <Specializations />
 
       <Specialists />
+
+      <Services />
 
       <BlogAndNews />
 

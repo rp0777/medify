@@ -1,0 +1,114 @@
+.services {
+  width: 100%;
+  min-height: 600px;
+  background-image: linear-gradient(to bottom, #e7f0ff, #e8f1ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--poppins-font-family);
+}
+
+.container {
+  margin-top: 50px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.imageContainer {
+  height: 520px;
+  width: 485px;
+  position: relative;
+}
+
+.servicePic1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.servicePic2 {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  z-index: 2;
+}
+
+.consultationCard {
+  position: absolute;
+  top: 95px;
+  left: -35px;
+  width: 235px;
+  height: 86px;
+  border-radius: 0.5rem;
+  background-color: white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.headingContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+
+.consultHeading {
+  color: #1b3c74;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.subTitle {
+  color: #77829d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.textContainer {
+  width: 565px;
+  height: 375px;
+}
+
+.subHeading {
+  color: #2aa7ff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.heading {
+  color: #1b3c74;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.headingBlue {
+  color: #2aa7ff;
+}
+
+.goal {
+  color: #77829d;
+  line-height: 29px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.points {
+  list-style: none;
+  height: 27px;
+  margin-bottom: 27px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1b3c74;
+  font-weight: 500;
+  font-size: 1rem;
+}
