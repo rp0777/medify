@@ -1,0 +1,67 @@
+.specialisations {
+  width: 100%;
+  height: 730px;
+  background-image: linear-gradient(to bottom, #e7f0ff, #e8f1ff);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  font-family: var(--poppins-font-family);
+}
+
+.mainHeading {
+  color: #1b3c74;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.specialisationCards {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  gap: 30px;
+}
+
+.specialCard {
+  height: 180px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  filter: drop-shadow(5px 15px 10px #dcd9d9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.specialCard:hover {
+  background-color: rgba(42, 167, 255, 7%);
+  border: 1px solid #2aa7ff;
+}
+
+.specialImg {
+  width: 80px;
+  height: 80px;
+}
+
+.specialTopic {
+  color: #abb6c7;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.specialCard:hover .specialTopic {
+  color: #2aa7ff;
+  font-weight: 600;
+}
+
+.veiwAllBtn {
+  width: 150px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #2aa8ff;
+  cursor: pointer;
+}

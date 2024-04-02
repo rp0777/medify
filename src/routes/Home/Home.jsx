@@ -6,7 +6,7 @@ import OfferCards from "./OfferCards/OfferCards";
 import SearchBox from "./SearchBox/SearchBox";
 import Services from "./Services/Services";
 import Specialists from "./Specialists/Specialists";
-import Specializations from "./Specializations/Specializations";
+import Specialisations from "./Specialisations/Specialisations";
 import Stats from "./Stats/Stats";
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
 
       <OfferCards />
 
-      <Specializations />
+      <Specialisations />
 
       <Specialists />
 

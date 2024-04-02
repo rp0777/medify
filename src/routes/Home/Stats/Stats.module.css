@@ -83,6 +83,11 @@
   align-items: center;
 }
 
+.card:hover {
+  background-color: rgba(42, 167, 255, 7%);
+  border: 1px solid #2aa7ff;
+}
+
 .cardIamge {
   width: 110px;
   height: 110px;
@@ -98,4 +103,9 @@
   color: #77829d;
   font-size: 1rem;
   font-weight: 500;
+}
+
+.card:hover .cardTopic {
+  color: #2aa7ff;
+  font-weight: 600;
 }
