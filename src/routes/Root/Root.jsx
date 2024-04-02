@@ -20,8 +20,6 @@ const Root = () => {
 
       <Outlet />
 
-      <FAQ />
-
       {/* MOBILE APP DOWNLOAD COMPONENT */}
       <AppDownload />
 

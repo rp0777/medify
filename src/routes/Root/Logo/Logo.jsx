@@ -5,7 +5,7 @@ import { Fragment } from "react";
 const Logo = () => {
   return (
     <Fragment>
-      <Link className={styles.logo} to="/Home">
+      <Link className={styles.logo} to="/">
         <img className={styles.logoImg} src="/medifyLogo.png" />
 
         <p className={styles.logoTitle}>Medify</p>

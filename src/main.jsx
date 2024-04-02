@@ -11,13 +11,16 @@ import Root from "./routes/Root/Root";
 import Home from "./routes/Home/Home";
 import MyBookings from "./routes/MyBookings/MyBookings";
 import Search from "./routes/Search/Search";
+import ErrorPage from "./error-page";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element=<Root />>
-      <Route path="/Home" element=<Home />></Route>
-      <Route path="/bookings" element=<MyBookings />></Route>
-      <Route path="/search" element=<Search />></Route>
+    <Route path="/" element=<Root errorElement={<ErrorPage />} />>
+      <Route errorElement={<ErrorPage />}>
+        <Route index element=<Home /> />
+        <Route path="/bookings" element=<MyBookings /> />
+        <Route path="/search" element=<Search /> />
+      </Route>
     </Route>
   )
 );
