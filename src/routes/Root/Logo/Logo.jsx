@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom";
 import styles from "./Logo.module.css";
+import { Fragment } from "react";
 
 const Logo = () => {
   return (
-    <div className={styles.logo}>
-      <img className={styles.logoImg} src="/medifyLogo.png" />
+    <Fragment>
+      <Link className={styles.logo} to="/Home">
+        <img className={styles.logoImg} src="/medifyLogo.png" />
 
-      <p className={styles.logoTitle}>Medify</p>
-    </div>
+        <p className={styles.logoTitle}>Medify</p>
+      </Link>
+    </Fragment>
   );
 };
 

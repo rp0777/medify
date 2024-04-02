@@ -2,6 +2,8 @@ import styles from "./Root.module.css";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import AppDownload from "./AppDownload/AppDownload";
+import { Outlet } from "react-router-dom";
+import FAQ from "./FAQ/FAQ";
 
 const Root = () => {
   return (
@@ -15,6 +17,10 @@ const Root = () => {
 
       {/* NAVBAR COMPONENT */}
       <Navbar />
+
+      <Outlet />
+
+      <FAQ />
 
       {/* MOBILE APP DOWNLOAD COMPONENT */}
       <AppDownload />

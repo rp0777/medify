@@ -16,6 +16,7 @@
   font-size: 14px;
   font-family: var(--poppins-font-family);
   color: #102851;
+  text-decoration: none;
 }
 
 .navbarLinks li {
@@ -33,6 +34,10 @@
   color: #2aa8ff;
   font-weight: 600;
   border-bottom: 2.5px solid #2aa8ff;
+}
+
+.links {
+  text-decoration: none;
 }
 
 #myBookings {
