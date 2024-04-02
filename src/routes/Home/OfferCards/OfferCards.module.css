@@ -1,2 +1,15 @@
 .offerCards {
+  height: 455px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.imageContainer {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 90px;
+}
+
+.offer {
 }

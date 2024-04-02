@@ -3,7 +3,6 @@ import BlogAndNews from "./BlogAndNews/BlogAndNews";
 import styles from "./Home.module.css";
 import Intro from "./Intro/Intro";
 import OfferCards from "./OfferCards/OfferCards";
-import SearchBox from "./SearchBox/SearchBox";
 import Services from "./Services/Services";
 import Specialists from "./Specialists/Specialists";
 import Specialisations from "./Specialisations/Specialisations";
@@ -13,8 +12,6 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Intro />
-
-      <SearchBox />
 
       <OfferCards />
 
