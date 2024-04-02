@@ -1,2 +1,68 @@
 .blogAndNews {
+  width: 100%;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--poppins-font-family);
+}
+
+.subHeading {
+  color: #2aa7ff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.heading {
+  color: #1b3c74;
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+.blogCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.blogCard {
+  width: 365px;
+  height: 450px;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #d1caca;
+}
+
+.blogTypeAndDate {
+  padding: 0.5rem 1rem;
+  color: #77829d;
+  font-size: 1rem;
+}
+
+.blogTopic {
+  padding: 0 1rem;
+  color: #1b3c74;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.authorDetails {
+  padding: 0.5rem 1rem;
+  color: #1b3c74;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.authorDetails {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.authorAvatar {
+  width: 2rem;
+  height: 2rem;
 }
