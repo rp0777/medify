@@ -1,5 +1,6 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import styles from "./SearchResults.module.css";
+import axios from "axios";
 
 const mockData = [
   {
@@ -22,22 +23,22 @@ const mockData = [
   },
 ];
 
-const SearchResultCards = ({ mockData }) => (
+const SearchResultCards = ({ hospitalList }) => (
   <Fragment>
-    {mockData.map((hospital) => (
+    {hospitalList.map((hospital) => (
       <div key={hospital.id} className={styles.searchResultCard}>
         <div className={styles.hospitalIcon}>
-          <img src={hospital.img} />
+          <img src="/searchPage/hospitalImg.png" />
         </div>
 
         <div className={styles.hospitalDetails}>
-          <p className={styles.hospitalName}>{hospital.hospitalName}</p>
+          <p className={styles.hospitalName}>{hospital["Hospital Name"]}</p>
 
           <p className={styles.hospitalCity}>
-            {hospital.city}, {hospital.state}
+            {hospital.City}, {hospital.State}
           </p>
 
-          <p className={styles.hospitalLandmark}>{hospital.landmark}</p>
+          <p className={styles.hospitalLandmark}>{hospital.Address}</p>
 
           <p className={styles.consultationFee}>
             <span className={styles.freeTag}>FREE</span> &nbsp;
@@ -45,10 +46,12 @@ const SearchResultCards = ({ mockData }) => (
             clinic
           </p>
 
-          <p className={styles.hospitalRating}>
-            <img src="/searchPage/like.png" />
-            {hospital.rating}
-          </p>
+          {hospital["Hospital overall rating"] !== "Not Available" && (
+            <p className={styles.hospitalRating}>
+              <img src="/searchPage/like.png" />
+              {hospital["Hospital overall rating"]}
+            </p>
+          )}
         </div>
 
         <div className={styles.booking}>
@@ -61,14 +64,31 @@ const SearchResultCards = ({ mockData }) => (
   </Fragment>
 );
 
-const SearchResults = () => {
+const SearchResults = ({ state, city }) => {
+  const [hospitalList, setHospitalList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `https://meddata-backend.onrender.com/data?state=${state}&city=${city.toUpperCase()}`
+        );
+        setHospitalList(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [state, city]);
+
   return (
     <div className={styles.searchPage}>
       <div className={styles.upperBox}></div>
 
       <div className={styles.searchResults}>
         <p className={styles.mainHeading}>
-          15 medical centers available in Alaska
+          15 medical centers available in {state}
         </p>
 
         <p className={styles.subHeading}>
@@ -78,7 +98,7 @@ const SearchResults = () => {
 
         <div className={styles.resultsAndAds}>
           <div className={styles.resultCards}>
-            <SearchResultCards mockData={mockData} />
+            <SearchResultCards hospitalList={hospitalList} />
           </div>
 
           <img src="/searchPage/advertisement.png" />

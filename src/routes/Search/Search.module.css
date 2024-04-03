@@ -6,3 +6,8 @@
   align-items: center;
   position: relative;
 }
+
+.space {
+  width: 100vw;
+  margin-top: 15%;
+}

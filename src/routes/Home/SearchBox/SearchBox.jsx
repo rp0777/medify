@@ -1,6 +1,25 @@
 import { Fragment } from "react";
 import styles from "./SearchBox.module.css";
-import { Link } from "react-router-dom";
+import { Form, Link, redirect } from "react-router-dom";
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  let state = formData.get("state");
+  let city = formData.get("city");
+
+  function capitalizeWords(str) {
+    return str.replace(/\b\w/g, function (char) {
+      return char.toUpperCase();
+    });
+  }
+
+  state = capitalizeWords(state);
+  city = city.toUpperCase();
+
+  const redirectUrl = `/search?state=${state}&city=${city}`;
+
+  return redirect(redirectUrl);
+}
 
 const categoryData = [
   {
@@ -45,13 +64,14 @@ const CategoryCards = ({ categoryData }) => (
 const SearchBox = () => {
   return (
     <div className={styles.searchBox}>
-      <div className={styles.searchForm}>
+      <Form className={styles.searchForm} method="post">
         <div className={styles.search}>
           <img src="/searchBar/searchIcon.png" />
 
           <input
             className={styles.searchInput}
             type="text"
+            name="state"
             placeholder="State"
           />
         </div>
@@ -62,15 +82,16 @@ const SearchBox = () => {
           <input
             className={styles.searchInput}
             type="text"
+            name="city"
             placeholder="City"
           />
         </div>
 
-        <button className={styles.searchBtn}>
+        <button type="submit" className={styles.searchBtn}>
           <img src="/searchBar/search.png" />
           Search
         </button>
-      </div>
+      </Form>
 
       <p className={styles.categoryTitle}>You may be looking for</p>
 

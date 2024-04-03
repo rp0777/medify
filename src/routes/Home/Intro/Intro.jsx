@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./Intro.module.css";
 
 const Intro = () => {
@@ -16,7 +17,9 @@ const Intro = () => {
             particular doctor.
           </p>
 
-          <button className={styles.findBtn}>Find Centers</button>
+          <Link to="search">
+            <button className={styles.findBtn}>Find Centers</button>
+          </Link>
         </div>
 
         <div className={styles.imageContainer}>
