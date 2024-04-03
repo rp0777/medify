@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import styles from "./SearchBox.module.css";
+import { Link } from "react-router-dom";
 
 const categoryData = [
   {
@@ -32,11 +33,11 @@ const categoryData = [
 const CategoryCards = ({ categoryData }) => (
   <Fragment>
     {categoryData.map((category) => (
-      <div key={category.id} className={styles.categoryCard}>
+      <Link to="search" key={category.id} className={styles.categoryCard}>
         <img className={styles.categoryIcon} src={category.img} />
 
         <p className={styles.categoryTopic}>{category.topic}</p>
-      </div>
+      </Link>
     ))}
   </Fragment>
 );

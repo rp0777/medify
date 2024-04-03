@@ -1,0 +1,162 @@
+.searchPage {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #e7f0ff, #e8f1ff);
+  font-family: var(--poppins-font-family);
+}
+
+.upperBox {
+  width: 100vw;
+  height: 98px;
+  background-color: #2aa7ff;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.searchResults {
+  width: 80%;
+  margin-top: 256px;
+  margin-bottom: 124px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.mainHeading {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.subHeading {
+  margin-top: 5px;
+  margin-bottom: 24px;
+  color: #787887;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.resultsAndAds {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.resultCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  width: 786px;
+}
+
+.searchResultCard {
+  width: 100%;
+  height: 270px;
+  border-radius: 15px;
+  padding: 24px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hospitalIcon {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hospitalDetails {
+  width: 360px;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hospitalName {
+  color: #14bef0;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hospitalCity {
+  color: #414146;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hospitalLandmark {
+  color: #414146;
+  font-size: 14px;
+}
+
+.consultationFee {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: #414146;
+}
+
+.freeTag {
+  color: #02a401;
+  font-weight: 700;
+}
+
+.fees {
+  color: #787887;
+  text-decoration: line-through;
+}
+
+.hospitalRating {
+  margin-top: 1rem;
+  min-width: 45px;
+  border-radius: 3.5px;
+  background-color: #00a500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.booking {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.availability {
+  align-self: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #01a400;
+}
+
+.bookBtn {
+  margin-top: 1rem;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #2aa7ff;
+}

@@ -1,5 +1,5 @@
 .blogAndNews {
-  width: 100%;
+  width: 100vw;
   height: 680px;
   display: flex;
   flex-direction: column;

@@ -92,6 +92,7 @@
   align-items: center;
   gap: 15px;
   border-radius: 0.5rem;
+  text-decoration: none;
 }
 
 .categoryCard:hover {
@@ -103,6 +104,7 @@
 .categoryTopic {
   color: #abb6c7;
   font-size: 18px;
+  text-decoration: none;
 }
 
 .categoryCard:hover .categoryTopic {

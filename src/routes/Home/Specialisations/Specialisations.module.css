@@ -1,5 +1,5 @@
 .specialisations {
-  width: 100%;
+  width: 100vw;
   height: 730px;
   background-image: linear-gradient(to bottom, #e7f0ff, #e8f1ff);
   display: flex;

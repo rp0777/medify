@@ -1,0 +1,62 @@
+.searchForm {
+  position: absolute;
+  top: 43px;
+  width: 80%;
+  min-height: 111px;
+  padding: 27px 24px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  filter: drop-shadow(5px 15px 10px #dcd9d9);
+}
+
+.search {
+  padding: 13px 15px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e3d9d9;
+  border-radius: 0.5rem;
+}
+
+.searchInput {
+  border: none;
+  color: #abb6c7 !important;
+  font-size: 14px;
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+#stateInput {
+  width: 326px;
+}
+
+#cityInput {
+  width: 522px;
+}
+
+.searchBtn {
+  width: 230px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  background-color: #2aa8ff;
+}
+
+.searchBtn:focus {
+  outline: none;
+}

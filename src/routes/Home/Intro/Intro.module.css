@@ -1,6 +1,6 @@
 .intro {
   height: 736px;
-  width: 100%;
+  width: 100vw;
   background-image: linear-gradient(to bottom, #e7f0ff, #e8f1ff);
   display: flex;
   flex-direction: column;

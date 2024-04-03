@@ -3,7 +3,6 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import AppDownload from "./AppDownload/AppDownload";
 import { Outlet } from "react-router-dom";
-import FAQ from "./FAQ/FAQ";
 
 const Root = () => {
   return (
