@@ -37,6 +37,7 @@
 .specialCard:hover {
   background-color: rgba(42, 167, 255, 7%);
   border: 1px solid #2aa7ff;
+  cursor: pointer;
 }
 
 .specialImg {

@@ -7,11 +7,14 @@ import Services from "./Services/Services";
 import Specialists from "./Specialists/Specialists";
 import Specialisations from "./Specialisations/Specialisations";
 import Stats from "./Stats/Stats";
+import SearchBox from "./SearchBox/SearchBox";
 
 const Home = () => {
   return (
     <div className={styles.home}>
       <Intro />
+
+      <SearchBox />
 
       <OfferCards />
 
