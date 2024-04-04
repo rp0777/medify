@@ -1,0 +1,93 @@
+.hospitalCard {
+  width: 100%;
+  height: 270px;
+  border-radius: 15px;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hospitalIcon {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hospitalDetails {
+  width: 360px;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hospitalName {
+  color: #14bef0;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.hospitalCity {
+  color: #414146;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hospitalLandmark {
+  color: #414146;
+  font-size: 14px;
+}
+
+.hospitalRating {
+  margin-top: 1rem;
+  min-width: 45px;
+  border-radius: 3.5px;
+  background-color: #00a500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.booking {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.timeTag {
+  width: 84px;
+  height: 2rem;
+  border-radius: 3px;
+  color: #2aa7ff;
+  font-size: 14px;
+  border: 1px solid #2aa7ff;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateTag {
+  width: 128px;
+  height: 2rem;
+  border-radius: 3px;
+  color: #00a500;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid #00a500;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

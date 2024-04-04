@@ -1,7 +1,8 @@
-.searchForm {
+.searchHospitals {
   position: absolute;
   top: 43px;
-  width: 80%;
+  right: 150px;
+  width: 780px;
   min-height: 111px;
   padding: 27px 24px;
   background-color: #ffffff;

@@ -13,6 +13,8 @@ import MyBookings from "./routes/MyBookings/MyBookings";
 import Search from "./routes/Search/Search";
 import ErrorPage from "./error-page";
 import { action as searchAction } from "./routes/Home/SearchBox/SearchBox";
+import { RecoilRoot } from "recoil";
+import { SnackbarProvider } from "notistack";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +30,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RecoilRoot>
+      <SnackbarProvider>
+        <RouterProvider router={router} />
+      </SnackbarProvider>
+    </RecoilRoot>
   </React.StrictMode>
 );

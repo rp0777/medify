@@ -1,3 +1,13 @@
 .myBookings {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.space {
+  width: 100vw;
+  margin-top: 15%;
 }

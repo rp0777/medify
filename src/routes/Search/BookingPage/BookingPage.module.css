@@ -1,0 +1,109 @@
+.bookingPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--poppins-font-family);
+  border-top: 1px solid #f0f0f5;
+}
+
+.dates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBtns {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #e0e0e4;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #2aa7ff;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.dayTab {
+  width: 205px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 4px solid #f0f0f5;
+  background-color: #ffffff;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.dayTab:focus {
+  outline: none;
+}
+
+.activeTab {
+  border-bottom: 4px solid #2aa7ff;
+}
+
+.dayTitle {
+  color: #414146;
+  font-size: 1rem;
+}
+
+.slotsAvailable {
+  color: #01a400;
+  font-size: 12px;
+}
+
+.timeSlots {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.timeSlot {
+  height: 73px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#afternoonSlot {
+  border-bottom: 1px solid #f0f0f5;
+  border-top: 1px solid #f0f0f5;
+}
+
+.slotTitle {
+  width: 140px;
+  text-align: center;
+  color: #414146;
+  font-size: 14px;
+}
+
+.timeBtns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.timeBtn {
+  width: 84px;
+  height: 2rem;
+  border-radius: 3px;
+  color: #2aa7ff;
+  font-size: 14px;
+  border: 1px solid #2aa7ff;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.selectedTime {
+  color: #ffffff;
+  background-color: #2aa7ff;
+}
