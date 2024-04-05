@@ -1,34 +1,62 @@
 import { Form, useLocation, useNavigate } from "react-router-dom";
 import styles from "./SearchForm.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const SearchForm = () => {
+  const [states, setStates] = useState([]);
+  const [cities, setCities] = useState([]);
   const navigate = useNavigate();
-
   const location = useLocation();
   const params = new URLSearchParams(location.search);
+
   let initialState = params.get("state") || "";
   let initialCity = params.get("city") || "";
 
-  function capitalizeWords(str) {
-    return str.replace(/\b\w/g, function (char) {
-      return char.toUpperCase();
-    });
-  }
+  const [selectedState, setSelectedState] = useState(initialState);
+  const [selectedCity, setSelectedCity] = useState(initialCity);
 
-  initialState = capitalizeWords(initialState);
-  initialCity = initialCity.toUpperCase();
+  useEffect(() => {
+    const fetchStatesData = async () => {
+      try {
+        const response = await axios.get(
+          `https://meddata-backend.onrender.com/states`
+        );
+        setStates(response.data);
+      } catch (error) {
+        console.error("Error fetching states data:", error);
+      }
+    };
 
-  const [state, setState] = useState(initialState);
-  const [city, setCity] = useState(initialCity);
+    fetchStatesData();
+  }, []);
+
+  useEffect(() => {
+    const fetchCitiesData = async () => {
+      try {
+        const response = await axios.get(
+          `https://meddata-backend.onrender.com/cities/${selectedState}`
+        );
+        setCities(response.data);
+      } catch (error) {
+        console.error("Error fetching cities data:", error);
+      }
+    };
+
+    fetchCitiesData();
+  }, [selectedState]);
+
+  const handleStateChange = (e) => {
+    const selectedState = e.target.value;
+    setSelectedState(selectedState);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedState = capitalizeWords(state);
-    const updatedCity = city.toUpperCase();
-
-    const redirectUrl = `/search?state=${updatedState}&city=${updatedCity}`;
-
+    const formData = new FormData(e.target);
+    const state = formData.get("state");
+    const city = formData.get("city");
+    const redirectUrl = `/search?state=${state}&city=${city}`;
     navigate(redirectUrl);
   };
 
@@ -37,28 +65,43 @@ const SearchForm = () => {
       <div id={styles.stateInput} className={styles.search}>
         <img src="/searchPage/location.png" />
 
-        <input
-          className={styles.searchInput}
-          type="text"
-          placeholder="State"
+        <select
           name="state"
-          onChange={(e) => setState(e.target.value)}
-          value={state ? state : ""}
-        />
+          className={styles.searchInput}
+          value={selectedState}
+          onChange={handleStateChange}
+        >
+          <option value="" disabled>
+            Select State
+          </option>
+
+          {states.map((state) => (
+            <option key={state} value={state}>
+              {state}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div id={styles.cityInput} className={styles.search}>
         <img src="/searchPage/location.png" />
 
-        <input
-          className={styles.searchInput}
-          type="text"
-          placeholder="City"
+        <select
           name="city"
-          defaultValue={city ? city : ""}
-          onChange={(e) => setCity(e.target.value)}
-          style={city ? { color: "black !important" } : {}}
-        />
+          className={styles.searchInput}
+          value={selectedCity}
+          onChange={(e) => setSelectedCity(e.target.value)}
+        >
+          <option value="" disabled>
+            Select City
+          </option>
+
+          {cities.map((city) => (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          ))}
+        </select>
       </div>
 
       <button type="submit" className={styles.searchBtn}>

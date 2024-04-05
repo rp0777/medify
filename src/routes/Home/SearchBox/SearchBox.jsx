@@ -1,25 +1,7 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import styles from "./SearchBox.module.css";
-import { Form, Link, redirect } from "react-router-dom";
-
-export async function action({ request }) {
-  const formData = await request.formData();
-  let state = formData.get("state");
-  let city = formData.get("city");
-
-  function capitalizeWords(str) {
-    return str.replace(/\b\w/g, function (char) {
-      return char.toUpperCase();
-    });
-  }
-
-  state = capitalizeWords(state);
-  city = city.toUpperCase();
-
-  const redirectUrl = `/search?state=${state}&city=${city}`;
-
-  return redirect(redirectUrl);
-}
+import { Form, Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const categoryData = [
   {
@@ -62,29 +44,92 @@ const CategoryCards = ({ categoryData }) => (
 );
 
 const SearchBox = () => {
+  const [states, setStates] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [selectedState, setSelectedState] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchStatesData = async () => {
+      try {
+        const response = await axios.get(
+          `https://meddata-backend.onrender.com/states`
+        );
+        setStates(response.data);
+      } catch (error) {
+        console.error("Error fetching states data:", error);
+      }
+    };
+
+    fetchStatesData();
+  }, []);
+
+  const handleStateChange = async (e) => {
+    const selectedState = e.target.value;
+    setSelectedState(selectedState);
+    try {
+      const response = await axios.get(
+        `https://meddata-backend.onrender.com/cities/${selectedState}`
+      );
+      setCities(response.data);
+    } catch (error) {
+      console.error("Error fetching cities data:", error);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const state = formData.get("state");
+    const city = formData.get("city");
+    const redirectUrl = `/search?state=${state}&city=${city}`;
+    navigate(redirectUrl);
+  };
+
   return (
     <div className={styles.searchBox}>
-      <Form className={styles.searchForm} method="post">
+      <Form className={styles.searchForm} onSubmit={handleSubmit}>
         <div className={styles.search}>
-          <img src="/searchBar/searchIcon.png" />
+          <img src="/searchBar/searchIcon.png" alt="search icon" />
 
-          <input
-            className={styles.searchInput}
-            type="text"
+          <select
             name="state"
-            placeholder="State"
-          />
+            className={styles.searchInput}
+            value={selectedState}
+            onChange={handleStateChange}
+          >
+            <option value="" disabled selected>
+              Select State
+            </option>
+
+            {states.map((state) => (
+              <option key={state} value={state}>
+                {state}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className={styles.search}>
           <img src="/searchBar/searchIcon.png" />
 
-          <input
-            className={styles.searchInput}
-            type="text"
+          <select
             name="city"
-            placeholder="City"
-          />
+            className={styles.searchInput}
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.target.value)}
+          >
+            <option value="" disabled selected>
+              Select City
+            </option>
+
+            {cities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
         </div>
 
         <button type="submit" className={styles.searchBtn}>

@@ -11,7 +11,7 @@ const BookingPage = ({ hospitalId }) => {
   const datesArray = [];
   const today = new Date();
 
-  for (let i = 0; i < 31; i++) {
+  for (let i = 0; i < 7; i++) {
     const futureDate = new Date();
     futureDate.setDate(today.getDate() + i);
     datesArray.push(futureDate.toISOString().split("T")[0]);
@@ -100,8 +100,10 @@ const BookingPage = ({ hospitalId }) => {
 
     if (index < datesArray.length) {
       setCurrentDates(datesArray.slice(index, index + 3));
+      return;
     } else {
-      setCurrentDates(datesArray.slice(index - 3, index));
+      // setCurrentDates(datesArray.slice(index - 3, index));
+      return;
     }
   };
 
@@ -109,7 +111,8 @@ const BookingPage = ({ hospitalId }) => {
     const index = datesArray.indexOf(currentDates[0]);
 
     if (index <= 0) {
-      setCurrentDates(datesArray.slice(0, 3));
+      // setCurrentDates(datesArray.slice(0, 3));
+      return;
     } else {
       setCurrentDates(datesArray.slice(index - 3, index));
     }

@@ -12,7 +12,6 @@ import Home from "./routes/Home/Home";
 import MyBookings from "./routes/MyBookings/MyBookings";
 import Search from "./routes/Search/Search";
 import ErrorPage from "./error-page";
-import { action as searchAction } from "./routes/Home/SearchBox/SearchBox";
 import { RecoilRoot } from "recoil";
 import { SnackbarProvider } from "notistack";
 
@@ -20,7 +19,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element=<Root errorElement={<ErrorPage />} />>
       <Route errorElement={<ErrorPage />}>
-        <Route index element=<Home /> action={searchAction} />
+        <Route index element=<Home /> />
         <Route path="/bookings" element=<MyBookings /> />
         <Route path="/search" element=<Search /> />
       </Route>
